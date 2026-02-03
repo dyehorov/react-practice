@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-.deleteButton {
+.button {
   background-color: transparent;
   border: none;
   cursor: pointer;
