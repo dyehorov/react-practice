@@ -1,0 +1,13 @@
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #4f4f4f;
+  padding: 12px 24px;
+  border-radius: 12px;
+}
+
+.deleteButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
