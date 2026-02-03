@@ -6,20 +6,23 @@ export default function Form({ todos, setTodos }) {
 
   function handleFormSubmit(event) {
     event.preventDefault()
-    event.target.closest("BUTTON").previousElementSibling.value = ""
-    setTodos([...todos, { id: Math.random(), text: inputText }])
+    if (inputText.trim().length === 0) return
+
+    setTodos([...todos, { id: crypto.randomUUID(), text: inputText }])
+    setInputText("")
   }
 
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleFormSubmit}>
       <input
+        value={inputText}
         type="text"
         name="inputTodo"
         placeholder="Add new task"
         id="inputTodo"
         onChange={event => setInputText(event.target.value)}
       />
-      <button type="submit" onClick={handleFormSubmit}>
+      <button type="submit">
         <i className="fa-solid fa-plus fa-xl"></i>
       </button>
     </form>

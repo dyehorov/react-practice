@@ -1,9 +1,14 @@
 .listItem {
   display: flex;
   justify-content: space-between;
+  gap: 8px;
   border: 1px solid #4f4f4f;
   padding: 12px 24px;
   border-radius: 12px;
+}
+
+.listItem > p {
+  overflow: hidden;
 }
 
 .deleteButton {
