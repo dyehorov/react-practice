@@ -1,0 +1,21 @@
+.noteFilterButton {
+  width: 100%;
+  padding: 4px 0;
+  background-color: transparent;
+  border: 1px solid #4f4f4f;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.noteFilterButton:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.noteFilterButton:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.noteFilterButton.picked {
+  background-color: #4f4f4f;
+  color: azure;
+}

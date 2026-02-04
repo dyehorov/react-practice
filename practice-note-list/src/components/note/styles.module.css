@@ -1,6 +1,5 @@
 .listItem {
   display: flex;
-  justify-content: space-between;
   gap: 8px;
   border: 1px solid #4f4f4f;
   padding: 12px 24px;
@@ -9,6 +8,23 @@
 
 .listItem > p {
   overflow: hidden;
+  flex-grow: 1;
+}
+
+.listItem > form {
+  display: flex;
+  align-items: stretch;
+}
+
+.listItem > input {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #4f4f4f;
+}
+
+.checkedNote {
+  text-decoration: line-through;
 }
 
 .button {

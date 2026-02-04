@@ -1,25 +1,30 @@
 import styles from "./styles.module.css"
 import { useState } from "react"
 
-export default function Form({ todos, setTodos }) {
+export default function NoteForm({ notes, setNoteAndUpdateLocalStorage }) {
   const [inputText, setInputText] = useState("")
 
-  function handleFormSubmit(event) {
+  function addNote(event) {
     event.preventDefault()
     if (inputText.trim().length === 0) return
 
-    setTodos([...todos, { id: crypto.randomUUID(), text: inputText }])
+    const newnotes = [
+      ...notes,
+      { id: crypto.randomUUID(), text: inputText, completed: false },
+    ]
+
+    setNoteAndUpdateLocalStorage(newnotes)
     setInputText("")
   }
 
   return (
-    <form className={styles.form} onSubmit={handleFormSubmit}>
+    <form className={styles.form} onSubmit={addNote}>
       <input
         value={inputText}
         type="text"
-        name="inputTodo"
+        name="inputnote"
         placeholder="Add new task"
-        id="inputTodo"
+        id="inputnote"
         onChange={event => setInputText(event.target.value)}
       />
       <button type="submit">
